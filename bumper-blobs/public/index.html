@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#0a1d20">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+<title>Bumper Blobs</title>
+</head>
+<body>
+<section id="menu">
+  <h1>Bumper Blobs</h1>
+  <p>Shove your friends off the shrinking arena. First to 3 round wins takes the match.</p>
+  <button id="create">Create room</button>
+  <div class="row">
+    <input id="codeIn" maxlength="4" placeholder="CODE" autocapitalize="characters" autocomplete="off" aria-label="Room code">
+    <button id="join" class="alt">Join</button>
+  </div>
+  <p id="menuMsg" role="status"></p>
+</section>
+
+<section id="lobby" class="hidden">
+  <p>Room code</p>
+  <h2 id="roomcode"></h2>
+  <ul id="slots"></ul>
+  <button id="share" class="alt">Invite friends</button>
+  <button id="start">Start game</button>
+  <p id="wait">Waiting for the host to start…</p>
+</section>
+
+<section id="play" class="hidden">
+  <canvas id="cv" width="600" height="600"></canvas>
+  <button id="dash">Dash</button>
+</section>
+<div id="base"></div><div id="knob"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="game.js"></script>
+<script>
+  if ("serviceWorker" in navigator)
+    addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+</script>
+</body>
+</html>

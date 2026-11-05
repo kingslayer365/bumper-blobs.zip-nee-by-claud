@@ -1,0 +1,34 @@
+:root { --bg:#0a1d20; --panel:#143a3f; --gold:#f2c14e; --text:#e8f1ef; --muted:#8fb0ab; }
+* { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html,body { height:100%; margin:0; }
+body {
+  background:var(--bg); color:var(--text);
+  font-family: ui-rounded,"Avenir Next","Trebuchet MS",system-ui,sans-serif;
+  touch-action:none; user-select:none; overscroll-behavior:none;
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+section { height:100%; max-width:420px; margin:0 auto; padding:24px; display:flex; flex-direction:column; justify-content:center; gap:14px; text-align:center; }
+section.hidden, .hidden { display:none; }
+#play { max-width:none; padding:0; align-items:center; justify-content:center; position:relative; }
+h1 { margin:0; font-size:3rem; line-height:1; letter-spacing:-.03em; color:var(--gold); }
+h2 { margin:0; font-size:3.6rem; letter-spacing:.18em; padding-left:.18em; }
+p { margin:0; color:var(--muted); line-height:1.4; }
+button, input { font:inherit; border:0; border-radius:999px; padding:14px 28px; }
+button { cursor:pointer; background:var(--gold); color:var(--bg); font-weight:700; }
+button.alt { background:var(--panel); color:var(--text); }
+button:active { transform:scale(.97); }
+:focus-visible { outline:3px solid var(--text); outline-offset:2px; }
+.row { display:flex; gap:10px; }
+input { flex:1; min-width:0; background:var(--panel); color:var(--text); text-align:center; text-transform:uppercase; letter-spacing:.2em; font-weight:700; }
+#menuMsg { min-height:1.4em; color:#ef476f; }
+#slots { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+#slots li { display:flex; align-items:center; gap:12px; background:var(--panel); padding:12px 16px; border-radius:14px; font-weight:700; }
+#slots i { width:22px; height:22px; border-radius:50%; }
+#slots span { margin-left:auto; color:var(--muted); font-weight:400; }
+#cv { width:min(100vw,100dvh); height:min(100vw,100dvh); display:block; }
+#dash { position:fixed; right:calc(20px + env(safe-area-inset-right)); bottom:calc(28px + env(safe-area-inset-bottom)); width:92px; height:92px; padding:0; box-shadow:0 0 0 6px rgba(242,193,78,.25); }
+#dash.cool { opacity:.4; }
+#base, #knob { position:fixed; border-radius:50%; pointer-events:none; display:none; transform:translate(-50%,-50%); }
+#base { width:110px; height:110px; background:rgba(232,241,239,.1); }
+#knob { width:48px; height:48px; background:rgba(232,241,239,.45); }
+@media (hover:hover) and (pointer:fine) { #dash { display:none; } }

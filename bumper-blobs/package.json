@@ -1,0 +1,13 @@
+{
+  "name": "bumper-blobs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bumper Blobs multiplayer game: static web app, PWA, and Capacitor-ready.",
+  "scripts": { "start": "npx serve public" },
+  "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/ios": "^6.0.0"
+  }
+}
